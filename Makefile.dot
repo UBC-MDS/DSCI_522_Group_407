@@ -1,0 +1,28 @@
+digraph G {
+n2[label="all", color="red"];
+n5[label="data/cleaned_test_data.csv", color="green"];
+n8[label="data/cleaned_train_data.csv", color="green"];
+n3[label="data/raw_data.csv", color="green"];
+n14[label="doc/eda_report.md", color="green"];
+n12[label="doc/final_report.md", color="green"];
+n13[label="doc/refs.bib", color="green"];
+n7[label="results/eda.png", color="red"];
+n10[label="results/ml_reports.csv", color="red"];
+n6[label="src/data_clean.py", color="green"];
+n4[label="src/data_read.R", color="green"];
+n9[label="src/eda.py", color="green"];
+n11[label="src/ml_pipeline_3.py", color="green"];
+n5 -> n2 ; 
+n3 -> n2 ; 
+n14 -> n2 ; 
+n12 -> n2 ; 
+n7 -> n2 ; 
+n10 -> n2 ; 
+n3 -> n5 ; 
+n6 -> n5 ; 
+n4 -> n3 ; 
+n13 -> n12 ; 
+n8 -> n7 ; 
+n9 -> n7 ; 
+n11 -> n10 ; 
+}
