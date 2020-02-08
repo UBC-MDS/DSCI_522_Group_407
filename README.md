@@ -19,6 +19,8 @@ More information about the meaning of each class and variables can be found [her
 ## Makefile diagram
 
 ![](Makefile.png)
+## Final Report
+Our final report can be found [here](https://github.com/UBC-MDS/DSCI_522_Group_407/blob/master/doc/final_report.md)
 
 ## Usage
 

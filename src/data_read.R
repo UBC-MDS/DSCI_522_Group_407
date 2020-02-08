@@ -13,6 +13,7 @@ Options:
 <filepath>        Takes a file path (this is a required positional argument)
 " -> doc
 
+# load packages
 library(tidyverse)
 library(docopt)
 library(stringr)
@@ -35,6 +36,7 @@ main <- function(file_path) {
     }
 }
 
+# testing if the import file is .csv file
 test_main <- function(){
   test_that("The file type should be .csv", {
       expect_match(

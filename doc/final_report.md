@@ -97,13 +97,15 @@ haven’t explored as many hyperparameters as intended.
 Our training error turns out the be the following:
 
 ``` r
-kable(errors)
+kable(errors, caption = 'Table 1: Error table comparing logistic regression and random forest.')
 ```
 
 | X1    | Random Forest |   Log |
 | :---- | ------------: | ----: |
 | Train |         0.019 | 0.295 |
-| Test  |         0.240 | 0.310 |
+| Test  |         0.239 | 0.310 |
+
+Table 1: Error table comparing logistic regression and random forest.
 
 Accuracy is not an appropriate measure to include for our analysis here
 because the data is highly imbalanced. Virtually any classification
@@ -119,48 +121,53 @@ convincing AUC plot. However, when exposed to new test data, both the
 algorithms don’t predict very well. The tendency is to classify actual
 fatal accidents as non-fatal. Since we would like to identify fatalities
 better so that medical services and emergency services could be
-notified, we should be looking at a system with higher
-precision.
+notified, we should be looking at a system with higher precision.
 
 #### Random Forest Results Classification report
 
 ``` r
-kable(random_forest_classification)
+kable(random_forest_classification,  caption = "Table 2: Classification matrix for random forest")
 ```
 
 | X1        |            1 |            2 |  accuracy |    macro avg | weighted avg |
 | :-------- | -----------: | -----------: | --------: | -----------: | -----------: |
-| precision |    0.9760247 |    0.9861769 | 0.9810473 |    0.9811008 |    0.9811008 |
-| recall    |    0.9863228 |    0.9757718 | 0.9810473 |    0.9810473 |    0.9810473 |
-| f1-score  |    0.9811467 |    0.9809468 | 0.9810473 |    0.9810468 |    0.9810468 |
+| precision |    0.9756569 |    0.9865613 | 0.9810473 |    0.9811091 |    0.9811091 |
+| recall    |    0.9867136 |    0.9753810 | 0.9810473 |    0.9810473 |    0.9810473 |
+| f1-score  |    0.9811541 |    0.9809393 | 0.9810473 |    0.9810467 |    0.9810467 |
 | support   | 2559.0000000 | 2559.0000000 | 0.9810473 | 5118.0000000 | 5118.0000000 |
+
+Table 2: Classification matrix for random forest
 
 #### Random Forest Results Confusion matrix on the train data
 
 ``` r
-kable(random_forest_train_confusion)
+kable(random_forest_train_confusion,  caption = "Table 3: Confusion matrix for Random forest training examples")
 ```
 
 | X1        | Not fatal | Fatal |
 | :-------- | --------: | ----: |
-| Not fatal |      2524 |    35 |
-| Fatal     |        62 |  2497 |
+| Not fatal |      2525 |    34 |
+| Fatal     |        63 |  2496 |
+
+Table 3: Confusion matrix for Random forest training examples
 
 #### Random Forest Results Confusion matrix on the test data
 
 ``` r
-kable(random_forest_test_confusion)
+kable(random_forest_test_confusion,  caption = "Table 4: Confusion matrix for Random forest test examples")
 ```
 
 | X1        | Not fatal | Fatal |
 | :-------- | --------: | ----: |
-| Not fatal |       582 |    89 |
-| Fatal     |     10821 | 34042 |
+| Not fatal |       581 |    90 |
+| Fatal     |     10806 | 34057 |
+
+Table 4: Confusion matrix for Random forest test examples
 
 #### Logistic Regression Classification report
 
 ``` r
-kable(log_reg_classification)
+kable(log_reg_classification,  caption = "Table 5: Classification matrix for Logistic regression")
 ```
 
 | X1        |            1 |            2 |  accuracy |    macro avg | weighted avg |
@@ -170,10 +177,12 @@ kable(log_reg_classification)
 | f1-score  |    0.7022871 |    0.7075910 | 0.7049629 |    0.7049390 |    0.7049390 |
 | support   | 2559.0000000 | 2559.0000000 | 0.7049629 | 5118.0000000 | 5118.0000000 |
 
+Table 5: Classification matrix for Logistic regression
+
 #### Logistic regression confusion matrix on training data
 
 ``` r
-kable(log_reg_train_confusion)
+kable(log_reg_train_confusion,  caption = "Table 6: Confusion matrix for logistic regression training examples")
 ```
 
 | X1        | Not fatal | Fatal |
@@ -181,16 +190,20 @@ kable(log_reg_train_confusion)
 | Not fatal |      1781 |   778 |
 | Fatal     |       732 |  1827 |
 
+Table 6: Confusion matrix for logistic regression training examples
+
 #### Logistic regression confusion matrix on test data
 
 ``` r
-kable(log_reg_test_confusion)
+kable(log_reg_test_confusion,  caption = "Table 7: Confusion matrix for logistic regression test examples")
 ```
 
 | X1        | Not fatal | Fatal |
 | :-------- | --------: | ----: |
 | Not fatal |       446 |   225 |
 | Fatal     |     13900 | 30963 |
+
+Table 7: Confusion matrix for logistic regression test examples
 
 #### AUC comparisons
 
@@ -222,7 +235,7 @@ Language*. <https://CRAN.R-project.org/package=docopt>.
 <div id="ref-matplotlib">
 
 Hunter, J. D. 2007. “Matplotlib: A 2D Graphics Environment.” *Computing
-in Science & Engineering* 9 (3). IEEE COMPUTER SOC: 90–95.
+in Science & Engineering* 9 (3): 90–95.
 <https://doi.org/10.1109/MCSE.2007.55>.
 
 </div>
@@ -263,7 +276,7 @@ Computing*. Vienna, Austria: R Foundation for Statistical Computing.
 VanderPlas, Jacob, Brian Granger, Jeffrey Heer, Dominik Moritz, Kanit
 Wongsuphasawat, Eitan Lees, Ilia Timofeev, Ben Welsh, and Scott Sievert.
 2018. “Altair: Interactive Statistical Visualizations for Python.”
-*Journal of Open Source Software*, December. The Open Journal.
+*Journal of Open Source Software*, December.
 <https://doi.org/10.21105/joss.01057>.
 
 </div>
