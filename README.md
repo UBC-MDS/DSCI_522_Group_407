@@ -16,6 +16,8 @@ We therefore took the extra step of balancing our data by downsampling the major
 
 More information about the meaning of each class and variables can be found [here](https://github.com/rita-ni/National_Collision_DB_Group407/blob/master/data/NCDB_Dictionary.pdf)
 
+## Final Report
+Our final report can be found [here](https://github.com/UBC-MDS/DSCI_522_Group_407/blob/master/doc/final_report.md)
 
 ## Usage
 
