@@ -85,7 +85,7 @@ We did implement hyperparameter optimization for the max_depth parameter and num
 Our training error turns out the be the following:
 
 ```{r}
-kable(errors)
+kable(errors, caption = 'Table 1: Error table comparing logistic regression and random forest.')
 ```
 
 Accuracy is not an appropriate measure to include for our analysis here because the data is highly imbalanced. Virtually any classification model can achieve high accuracy when the data is highly imbalanced, however, a more useful metric is the f1-score. Overall we found that the Random Forest classification model performed the best with the highest overall f1-score of 0.45 and 0.99 for the fatal and non-fatal classes respectively. 
@@ -95,13 +95,13 @@ After balancing the dataset using upward balancing techniques, we find that the 
 #### Random Forest Results Classification report
 
 ```{r}
-kable(random_forest_classification)
+kable(random_forest_classification,  caption = "Table 2: Classification matrix for random forest")
 ```
 
 #### Random Forest Results Confusion matrix on the train data
 
 ```{r}
-kable(random_forest_train_confusion)
+kable(random_forest_train_confusion,  caption = "Table 3: Confusion matrix for Random forest training examples")
 
 ```
 
@@ -109,7 +109,7 @@ kable(random_forest_train_confusion)
 #### Random Forest Results Confusion matrix on the test data
 
 ```{r}
-kable(random_forest_test_confusion)
+kable(random_forest_test_confusion,  caption = "Table 4: Confusion matrix for Random forest test examples")
 
 ```
 
@@ -118,14 +118,14 @@ kable(random_forest_test_confusion)
 #### Logistic Regression Classification report
 
 ```{r}
-kable(log_reg_classification)
+kable(log_reg_classification,  caption = "Table 5: Classification matrix for Logistic regression")
 
 ```
 
 #### Logistic regression confusion matrix on training data
 
 ```{r}
-kable(log_reg_train_confusion)
+kable(log_reg_train_confusion,  caption = "Table 6: Confusion matrix for logistic regression training examples")
 
 ```
 
@@ -133,7 +133,7 @@ kable(log_reg_train_confusion)
 #### Logistic regression confusion matrix on test data
 
 ```{r}
-kable(log_reg_test_confusion)
+kable(log_reg_test_confusion,  caption = "Table 7: Confusion matrix for logistic regression test examples")
 ```
 
 
