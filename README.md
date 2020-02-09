@@ -35,6 +35,14 @@ project:
     Rscript -e "rmarkdown::render('doc/eda_report.Rmd')"
     python src/ml_lgr_rf.py
     Rscript -e "rmarkdown::render('doc/final_report.Rmd')"
+    
+To run this analysis using Docker, clone/download this repository, use the command line to navigate to the root of this project on your computer, and then type the following (filling in PATH_ON_YOUR_COMPUTER with the absolute path to the root of this project on your computer).
+
+`docker run --rm -v /Users/rn/desktop/mds/DSCI_522_Group_407:/Users/data_analysis niruidan/407image make -C '/Users/data_analysis' all`
+
+To clean up the analysis type:
+
+`docker run --rm -v /Users/rn/desktop/mds/DSCI_522_Group_407:/Users/data_analysis niruidan/407image make -C '/Users/data_analysis' clean`
 
 ## Dependencies
 Python 3.7.3 and Python packages:
