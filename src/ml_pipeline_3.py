@@ -93,15 +93,8 @@ confusion_matrix_rf_test = confusion_matrix(y_test, pipe.predict(X_test))
 report_rf = classification_report(y_train, pipe.predict(X_train), output_dict = True)
 
 # Create a plot for the ROC Curve
-fpr, tpr, thresholds = roc_curve(y_test, pipe.predict_proba(X_test)[:,1], pos_label=2)
+rf_fpr, rf_tpr, rf_thresholds = roc_curve(y_test, pipe.predict_proba(X_test)[:,1], pos_label=2)
 
-plt.plot(fpr, tpr);
-plt.plot((0,1),(0,1),'--k');
-plt.xlabel('false positive rate');
-plt.ylabel('true positive rate');
-plt.title('AUC Random Forest');
-plt.savefig('results/auc_rf.png')
-plt.clf()
 
 # Pipeline to pass the Logistic regression model
 pipe = Pipeline(steps=[('preprocessor', preprocessor),
@@ -129,14 +122,17 @@ print("Generated confusion matrices for test and train")
 print("Generated classification report for training data")
 
 # Plot of the output for ROC Curve for logistic regression
-fpr, tpr, thresholds = roc_curve(y_test, pipe.predict_proba(X_test)[:,1], pos_label=2)
+log_fpr, log_tpr, log_thresholds = roc_curve(y_test, pipe.predict_proba(X_test)[:,1], pos_label=2)
 
-plt.plot(fpr, tpr);
+
+plt.plot(rf_fpr, rf_tpr, c='g', label='Random Forest')
+plt.plot(log_fpr, log_tpr, c='r', label='Logistic Regression')
 plt.plot((0,1),(0,1),'--k');
 plt.xlabel('false positive rate');
 plt.ylabel('true positive rate');
-plt.title('AUC Logistic regression');
-plt.savefig('results/auc_lgr.png')
+plt.title('AUC');
+plt.legend()
+plt.savefig('results/auc.png')
 plt.clf()
 
 # Save results for random forest classification report

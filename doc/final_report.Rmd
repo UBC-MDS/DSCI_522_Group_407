@@ -139,8 +139,7 @@ kable(log_reg_test_confusion,  caption = "Table 7: Confusion matrix for logistic
 
 
 #### AUC comparisons
-![](../results/auc_lgr.png)
-![](../results/auc_rf.png)
+![](../results/auc.png)
 
 # Changes and future improvements
 

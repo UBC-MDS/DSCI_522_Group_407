@@ -94,16 +94,17 @@ haven’t explored as many hyperparameters as intended.
 
 ### Results and Discussion:
 
-Our training error turns out the be the following:
+Our training error turns out the be the
+following:
 
 ``` r
 kable(errors, caption = 'Table 1: Error table comparing logistic regression and random forest.')
 ```
 
-| X1    | Random Forest |   Log |
-| :---- | ------------: | ----: |
-| Train |         0.019 | 0.295 |
-| Test  |         0.239 | 0.310 |
+| X1    | Random Forest |  Log |
+| :---- | ------------: | ---: |
+| Train |          0.02 | 0.30 |
+| Test  |          0.24 | 0.31 |
 
 Table 1: Error table comparing logistic regression and random forest.
 
@@ -121,7 +122,8 @@ convincing AUC plot. However, when exposed to new test data, both the
 algorithms don’t predict very well. The tendency is to classify actual
 fatal accidents as non-fatal. Since we would like to identify fatalities
 better so that medical services and emergency services could be
-notified, we should be looking at a system with higher precision.
+notified, we should be looking at a system with higher
+precision.
 
 #### Random Forest Results Classification report
 
@@ -129,14 +131,15 @@ notified, we should be looking at a system with higher precision.
 kable(random_forest_classification,  caption = "Table 2: Classification matrix for random forest")
 ```
 
-| X1        |            1 |            2 |  accuracy |    macro avg | weighted avg |
-| :-------- | -----------: | -----------: | --------: | -----------: | -----------: |
-| precision |    0.9756569 |    0.9865613 | 0.9810473 |    0.9811091 |    0.9811091 |
-| recall    |    0.9867136 |    0.9753810 | 0.9810473 |    0.9810473 |    0.9810473 |
-| f1-score  |    0.9811541 |    0.9809393 | 0.9810473 |    0.9810467 |    0.9810467 |
-| support   | 2559.0000000 | 2559.0000000 | 0.9810473 | 5118.0000000 | 5118.0000000 |
+| X1        |       1 |       2 | accuracy | macro avg | weighted avg |
+| :-------- | ------: | ------: | -------: | --------: | -----------: |
+| precision |    0.98 |    0.99 |     0.98 |      0.98 |         0.98 |
+| recall    |    0.99 |    0.98 |     0.98 |      0.98 |         0.98 |
+| f1-score  |    0.98 |    0.98 |     0.98 |      0.98 |         0.98 |
+| support   | 2559.00 | 2559.00 |     0.98 |   5118.00 |      5118.00 |
 
-Table 2: Classification matrix for random forest
+Table 2: Classification matrix for random
+forest
 
 #### Random Forest Results Confusion matrix on the train data
 
@@ -146,10 +149,11 @@ kable(random_forest_train_confusion,  caption = "Table 3: Confusion matrix for R
 
 | X1        | Not fatal | Fatal |
 | :-------- | --------: | ----: |
-| Not fatal |      2525 |    34 |
-| Fatal     |        63 |  2496 |
+| Not fatal |      2521 |    38 |
+| Fatal     |        59 |  2500 |
 
-Table 3: Confusion matrix for Random forest training examples
+Table 3: Confusion matrix for Random forest training
+examples
 
 #### Random Forest Results Confusion matrix on the test data
 
@@ -159,10 +163,11 @@ kable(random_forest_test_confusion,  caption = "Table 4: Confusion matrix for Ra
 
 | X1        | Not fatal | Fatal |
 | :-------- | --------: | ----: |
-| Not fatal |       581 |    90 |
-| Fatal     |     10806 | 34057 |
+| Not fatal |       583 |    88 |
+| Fatal     |     10779 | 34084 |
 
-Table 4: Confusion matrix for Random forest test examples
+Table 4: Confusion matrix for Random forest test
+examples
 
 #### Logistic Regression Classification report
 
@@ -170,14 +175,15 @@ Table 4: Confusion matrix for Random forest test examples
 kable(log_reg_classification,  caption = "Table 5: Classification matrix for Logistic regression")
 ```
 
-| X1        |            1 |            2 |  accuracy |    macro avg | weighted avg |
-| :-------- | -----------: | -----------: | --------: | -----------: | -----------: |
-| precision |    0.7087147 |    0.7013436 | 0.7049629 |    0.7050291 |    0.7050291 |
-| recall    |    0.6959750 |    0.7139508 | 0.7049629 |    0.7049629 |    0.7049629 |
-| f1-score  |    0.7022871 |    0.7075910 | 0.7049629 |    0.7049390 |    0.7049390 |
-| support   | 2559.0000000 | 2559.0000000 | 0.7049629 | 5118.0000000 | 5118.0000000 |
+| X1        |       1 |       2 | accuracy | macro avg | weighted avg |
+| :-------- | ------: | ------: | -------: | --------: | -----------: |
+| precision |    0.71 |    0.70 |      0.7 |      0.71 |         0.71 |
+| recall    |    0.70 |    0.71 |      0.7 |      0.70 |         0.70 |
+| f1-score  |    0.70 |    0.71 |      0.7 |      0.70 |         0.70 |
+| support   | 2559.00 | 2559.00 |      0.7 |   5118.00 |      5118.00 |
 
-Table 5: Classification matrix for Logistic regression
+Table 5: Classification matrix for Logistic
+regression
 
 #### Logistic regression confusion matrix on training data
 
@@ -190,7 +196,8 @@ kable(log_reg_train_confusion,  caption = "Table 6: Confusion matrix for logisti
 | Not fatal |      1781 |   778 |
 | Fatal     |       732 |  1827 |
 
-Table 6: Confusion matrix for logistic regression training examples
+Table 6: Confusion matrix for logistic regression training
+examples
 
 #### Logistic regression confusion matrix on test data
 
@@ -207,7 +214,7 @@ Table 7: Confusion matrix for logistic regression test examples
 
 #### AUC comparisons
 
-![](../results/auc_lgr.png) ![](../results/auc_rf.png)
+![](../results/auc.png)
 
 # Changes and future improvements
 
@@ -235,7 +242,7 @@ Language*. <https://CRAN.R-project.org/package=docopt>.
 <div id="ref-matplotlib">
 
 Hunter, J. D. 2007. “Matplotlib: A 2D Graphics Environment.” *Computing
-in Science & Engineering* 9 (3): 90–95.
+in Science & Engineering* 9 (3). IEEE COMPUTER SOC: 90–95.
 <https://doi.org/10.1109/MCSE.2007.55>.
 
 </div>
@@ -276,7 +283,7 @@ Computing*. Vienna, Austria: R Foundation for Statistical Computing.
 VanderPlas, Jacob, Brian Granger, Jeffrey Heer, Dominik Moritz, Kanit
 Wongsuphasawat, Eitan Lees, Ilia Timofeev, Ben Welsh, and Scott Sievert.
 2018. “Altair: Interactive Statistical Visualizations for Python.”
-*Journal of Open Source Software*, December.
+*Journal of Open Source Software*, December. The Open Journal.
 <https://doi.org/10.21105/joss.01057>.
 
 </div>
